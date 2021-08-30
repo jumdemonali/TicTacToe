@@ -50,9 +50,6 @@ public class TicTacToe {
         if (index > 9 || index < 1) {
             System.out.println("You have chosen wrong index");
             selectBox();
-        } else if (board[index] != ' ') {
-            System.out.println("Index is occupied ");
-            selectBox();
         } else
             board[index] = playerschoice;
             showBoard();
