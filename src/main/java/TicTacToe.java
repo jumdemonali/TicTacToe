@@ -1,13 +1,16 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
     public static Scanner sc = new Scanner(System.in);
     static char[] board = new char[10];
     public static char playerschoice;
+    static Random rand = new Random();
 
     public static void main(String args[]) {
         System.out.println("Welcome to Tic-Tac-Toe game");
         boardInit();
+        toss();
         playerOption();
         showBoard();
         selectBox();
@@ -42,6 +45,15 @@ public class TicTacToe {
         System.out.println("|-----------|");
         System.out.println("| " + board[7] + " | " + board[8] + " | " + board[9] + " |");
         System.out.println(" ----------- ");
+    }
+    private static void toss() {
+        System.out.println("Tossing coin to check who will play first");
+        int toss = rand.nextInt();
+        if (toss == 1) {
+            System.out.println("Tails came computer will play first");
+        } else {
+            System.out.println("Head came player will play first");
+        }
     }
 
     public static void selectBox() {
